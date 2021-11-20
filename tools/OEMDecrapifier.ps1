@@ -30,8 +30,8 @@ Function Remove-MicrosoftO365Package {
 
 Function Remove-McAfee {
     Write-Host "Removing packages matching McAfee*"
-    $apps = Get-Package -Name "McAfee*" -ErrorAction SilentlyContinue
-    Uninstall-Package $apps -Force -ErrorAction SilentlyContinue
+    $apps = Get-AppxPackage -Name "McAfee*"
+    Remove-AppxPackage $apps -Force
 } 
 
 Function Remove-WildTangent {
@@ -84,7 +84,7 @@ Remove-HPInc
 Remove-HpPackages
 Remove-OfficePackages
 Remove-MicrosoftO365Package
-Remove-McAfee
+# Remove-McAfee
 Remove-WildTangent
 Remove-WizLink
 Remove-Office
