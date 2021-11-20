@@ -252,7 +252,7 @@ Function RegSetUser {
     #Ads in File Explorer
     Reg Add "$reglocation\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /T REG_DWORD /V "ShowSyncProviderNotifications" /D 0 /F
     #Hide all desktop icons
-    Reg Add "$reglocation\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /T REG_DWORD /V "NoDesktop" /D 0 /F
+    Reg Add "$reglocation\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /T REG_DWORD /V "NoDesktop" /D 1 /F
     #Show me the Windows welcome experience after updates and occasionally
     Reg Add "$reglocation\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /T REG_DWORD /V "SubscribedContent-310093Enabled" /D 0 /F
     #Get tips, tricks, suggestions as you use Windows 
