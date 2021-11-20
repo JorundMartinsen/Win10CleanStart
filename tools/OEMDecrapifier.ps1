@@ -48,8 +48,9 @@ Function Remove-ExpressVPN {
 
 Function Remove-Office {
     Write-Host "Downloading tools to remove office installs"
-    (New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/JorundMartinsen/Win10CleanStart/office/officesetup.exe', 'C:\IT\officesetup.exe')
-    (New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/JorundMartinsen/Win10CleanStart/office/removeOffice.xml', 'C:\IT\removeOffice.xml')
+    If (!(Test-Path "C:\IT")) { New-Item -Path "C:\" -Name "IT" -ItemType "directory" }
+    (New-Object System.Net.WebClient).DownloadFile('https://github.com/JorundMartinsen/Win10CleanStart/blob/main/office/officesetup.exe', 'C:\IT\officesetup.exe')
+    (New-Object System.Net.WebClient).DownloadFile('https://github.com/JorundMartinsen/Win10CleanStart/blob/main/office/removeOffice.xml', 'C:\IT\removeOffice.xml')
     Write-Host "Removing office installs"
     C:\IT\officesetup /configure C:\IT\removeOffice.xml
 }
